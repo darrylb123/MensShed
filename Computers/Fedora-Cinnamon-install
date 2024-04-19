@@ -1,0 +1,17 @@
+#!/bin/bash -x
+# Update the computer
+dnf -y update 
+
+# Install gnome-software
+dnf -y install fedora-workstation-repositories gnome-software
+
+# Flatpak is installed with gnome-software
+# enable flathub repository
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Install google chrome
+dnf install google-chrome-stable
+
+# Install FreeCAD from flathub
+
