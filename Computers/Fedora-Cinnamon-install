@@ -8,6 +8,13 @@ dnf -y install git
 # Install gnome-software
 dnf -y install fedora-workstation-repositories gnome-software
 
+#enable the 3rd party repositories
+dnf config-manager --enable google-chrome
+dnf config-manager --enable copr:copr.fedorainfracloud.org:phracek:PyCharm
+dnf config-manager --enable rpmfusion-nonfree-nvidia-driver
+dnf config-manager --enable rpmfusion-nonfree-steam
+
+
 # Flatpak is installed with gnome-software
 # enable flathub repository
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -21,3 +28,7 @@ flatpak install flathub org.freecadweb.FreeCAD -y
 #install Bambu Studio
 flatpak install flathub com.bambulab.BambuStudio -y
 
+
+# start the ssh daemon to enable remote admin
+systemctl enable sshd
+systemctl start sshd
