@@ -18,19 +18,19 @@ dnf config-manager --enable rpmfusion-nonfree-nvidia-driver
 dnf config-manager --enable rpmfusion-nonfree-steam
 
 
-# Flatpak is installed with gnome-software
-# enable flathub repository
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install google chrome
 dnf -y install google-chrome-stable
 
-# Install FreeCAD from flathub
-flatpak install flathub org.freecadweb.FreeCAD -y
+# Flatpak is installed with gnome-software
+# enable flathub repository
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-#install Bambu Studio
-flatpak install flathub com.bambulab.BambuStudio -y
+# Install FreeCAD 
+flatpak install flathub org.freecadweb.FreeCAD -y --noninteractive
 
+#Install Bambu Studio
+flatpak install flathub com.bambulab.BambuStudio -y --noninteractive
 
 # start the ssh daemon to enable remote admin
 systemctl enable sshd
