@@ -11,6 +11,9 @@ dnf -y install git
 # Install gnome-software
 dnf -y install fedora-workstation-repositories gnome-software
 
+# Install the Cinnamon desktop
+dnf -y groupinstall 'Cinnamon Desktop'
+
 #enable the 3rd party repositories
 dnf config-manager --enable google-chrome
 dnf config-manager --enable copr:copr.fedorainfracloud.org:phracek:PyCharm
