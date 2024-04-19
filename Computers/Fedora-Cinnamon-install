@@ -41,7 +41,7 @@ systemctl start sshd
 
 # Install Lightburn
 LB=$(curl -s  https://api.github.com/repos/LightBurnSoftware/deployment/releases/latest | grep AppImage | grep browser_download_url | cut -d\"  -f 4)
-if [ -f $HOME/Desktop/$LB ]
+if [ -f Desktop/$LB ]
 then
 	echo "Lightburn already installed"
 else
