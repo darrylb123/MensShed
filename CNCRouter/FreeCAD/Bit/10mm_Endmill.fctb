@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "10mm_Endmill",
+  "shape": "endmill.fcstd",
+  "parameter": {
+    "Chipload": "0.00 mm",
+    "CuttingEdgeHeight": "30.00 mm",
+    "Diameter": "10.00 mm",
+    "Flutes": "0",
+    "Length": "50.00 mm",
+    "Material": "HSS",
+    "ShankDiameter": "12.00 mm",
+    "SpindleDirection": "Forward"
+  },
+  "attribute": {}
+}

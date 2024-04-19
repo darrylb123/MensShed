@@ -1,0 +1,31 @@
+
+import Draft
+import math
+
+
+step = 0.1          # rad
+tmin = 0
+tmax = 2 * math.pi
+
+R = 20              # sphere radius
+A = 3               # amplitude
+
+pts=[]              # start values
+x = 0
+y = 0
+z = 0
+t = tmin
+
+while t < tmax:
+
+    z = A * math.sin(4 * t)
+
+    x = R * math.cos(t)
+    y = R * math.sin(t)
+
+    pts.append((x,y,z))
+
+    t += step
+    
+
+Draft.makeBSpline(pts, closed = True)

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "20mm Endmill",
+  "shape": "endmill.fcstd",
+  "parameter": {
+    "CuttingEdgeHeight": "31.8000 mm",
+    "Diameter": "19.0000 mm",
+    "Length": "77.0000 mm",
+    "ShankDiameter": "12.7000 mm"
+  },
+  "attribute": {}
+}

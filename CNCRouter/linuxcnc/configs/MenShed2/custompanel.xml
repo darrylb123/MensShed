@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+	<labelframe text="Touchplate Thickness">
+		<hbox> 
+			<boxanchor anchor="center"/>
+			<button>
+     				<halpin>"touchplate-mm"</halpin>
+     				<text>"Compensate 1.6mm"</text> 
+ 			</button>
+		</hbox>
+	</labelframe>
+	<labelframe text="Spindle Speed">
+		<table flexible_rows="[3]" flexible_columns="[3]">
+		<tablesticky sticky="new"/>
+		<tablerow/>
+			<tablesticky sticky="new"/>
+			<label text="Setpoint:"/>
+			<label text="            "/>
+			<number>
+				<halpin>"spindle-setpoint"</halpin>
+				<font>("Helvetica",20)</font>
+		                <format>"d"</format>
+		        </number>
+		<tablerow/>
+			<label text="Actual RPM:"/>
+			<label text="            "/>
+			<number>
+				<halpin>"spindle-speed"</halpin>
+				<font>("Helvetica",20)</font>
+		                <format>"d"</format>
+		        </number>
+		<tablerow/>
+			<label text="At Speed: "/>
+			<label text="            "/>
+
+			<rectled>
+		        	<halpin>"spindle-at-speed-led"</halpin> 
+		        	<height>30</height> 
+		        	<width>100</width> 
+		        	<on_color>"green"</on_color>
+		        	<off_color>"red"</off_color>
+			</rectled>
+		</table>
+	</labelframe>
+	<labelframe text="Spindle Current">
+		<meter>
+	        	<halpin>"spindle-current"</halpin>
+		        <text>""</text>
+		        <subtext>"Amps"</subtext>
+		        <size>250</size>
+		        <min_>0</min_>
+		        <max_>20</max_>
+		        <majorscale>1</majorscale>
+		        <minorscale>0.2</minorscale>
+		        <region1>(0,11,"green")</region1>
+		        <region2>(11,15,"yellow")</region2>
+		        <region3>(15,20,"red")</region3>
+		</meter>
+	</labelframe>
+
+</pyvcp>
+
