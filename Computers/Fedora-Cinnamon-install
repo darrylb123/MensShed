@@ -22,8 +22,8 @@ dnf config-manager --enable rpmfusion-nonfree-steam
 
 
 
-# Install google chrome
-dnf -y install google-chrome-stable
+# Install additional packages
+dnf -y install google-chrome-stable gimp inkscape
 
 # Flatpak is installed with gnome-software
 # enable flathub repository
