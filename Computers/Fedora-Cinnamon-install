@@ -35,6 +35,9 @@ flatpak install flathub org.freecadweb.FreeCAD -y --noninteractive
 #Install Bambu Studio
 flatpak install flathub com.bambulab.BambuStudio -y --noninteractive
 
+#Install Converter Now
+flatpak install flathub io.github.ferraridamiano.ConverterNOW -y --noninteractive
+
 # start the ssh daemon to enable remote admin
 systemctl enable sshd
 systemctl start sshd
