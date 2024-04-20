@@ -52,7 +52,7 @@ then
 else
         pwd
         MYID=$(basename $(pwd))
-        ( cd Desktop; wget  $LB ; chmod +x $LBFILE ;chown $MYID:$MYID $LBFILE )
+        ( cd Desktop; curl -OL  $LB ; chmod +x $LBFILE ;chown $MYID:$MYID $LBFILE )
 fi
 
 echo "Please reboot at your convenience"
