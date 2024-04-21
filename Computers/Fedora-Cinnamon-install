@@ -45,14 +45,14 @@ systemctl start sshd
 # Install Lightburn
 LB=$(curl -s  https://api.github.com/repos/LightBurnSoftware/deployment/releases/latest | grep AppImage | grep browser_download_url | cut -d\"  -f 4)
 LBFILE=$(basename $LB)
+MYID=$(basename $(pwd))
 echo "Installing $LB"
 if [ -f "Desktop/$LBFILE" ]
 then
         echo "$LBFILE already installed"
 else
-        pwd
-        MYID=$(basename $(pwd))
-        ( cd Desktop; curl -OL  $LB ; chmod +x $LBFILE ;chown $MYID:$MYID $LBFILE )
+        ( cd Desktop; curl -OL  $LB )
 fi
-
+chown $MYID:$MYID "Desktop/$LBFILE" 
+chmod +x "Desktop/$LBFILE"
 echo "Please reboot at your convenience"
