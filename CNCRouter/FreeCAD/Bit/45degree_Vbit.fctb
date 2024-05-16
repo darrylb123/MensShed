@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "name": "45 Deg. V-Bit001",
+  "name": "45 Deg. V-Bit006",
   "shape": "v-bit.fcstd",
   "parameter": {
     "Chipload": "0.00 mm",
     "CuttingEdgeAngle": "45.00",
-    "CuttingEdgeHeight": "14.00 mm",
-    "Diameter": "3.17500 mm",
+    "CuttingEdgeHeight": "15.00 mm",
+    "Diameter": "16.00 mm",
     "Flutes": "0",
-    "Length": "25.00 mm",
+    "Length": "50.00 mm",
     "Material": "HSS",
-    "ShankDiameter": "3.175 mm",
-    "TipDiameter": "0.00 mm"
+    "ShankDiameter": "12.00 mm",
+    "TipDiameter": "0"
   },
   "attribute": {}
 }
