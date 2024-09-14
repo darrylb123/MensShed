@@ -47,6 +47,30 @@ bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/vm/haos-vm.sh)"
 
 Follow [Running Frigate on Proxmox](https://www.homeautomationguy.io/blog/running-frigate-on-proxmox) to create the docker environment inside a Proxmox LXC container.
 
+#### /etc/pve/lxc/10x.conf
+
+```
+arch: amd64
+cores: 2
+features: nesting=1
+hostname: docker-frigate
+memory: 8192
+mp0: /mnt/pve/cctv_clips,mp=/cctv_clips
+nameserver: 192.168.1.254
+net0: name=eth0,bridge=vmbr0,gw=192.168.1.254,hwaddr=BC:24:11:38:E6:CD,ip=192.168.1.32/24,type=veth
+onboot: 1
+ostype: debian
+rootfs: local-lvm:vm-101-disk-0,size=4G
+swap: 512
+tags: proxmox-helper-scripts
+lxc.mount.entry: /dev/bus/usb/002/ dev/bus/usb/002/ none bind,optional,create=dir 0,0
+lxc.cgroup2.devices.allow: a
+lxc.cap.drop: 
+lxc.cgroup2.devices.allow: c 188:* rwm
+lxc.cgroup2.devices.allow: c 189:* rwm
+lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file 0, 0
+```
+
 #### Video requirement for frigate
 
 Edit /etc/pve/lxc/10x.conf to add the video /dev/dri/renderD128 entry as described
