@@ -55,7 +55,7 @@ cores: 2
 features: nesting=1
 hostname: docker-frigate
 memory: 8192
-mp0: /mnt/pve/cctv_clips,mp=/cctv_clips
+mp0: /var/spool/frigate,mp=/cctv_clips
 nameserver: 192.168.1.254
 net0: name=eth0,bridge=vmbr0,gw=192.168.1.254,hwaddr=BC:24:11:38:E6:CD,ip=192.168.1.32/24,type=veth
 onboot: 1
