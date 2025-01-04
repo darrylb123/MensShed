@@ -120,3 +120,42 @@ Make sure the camera is configured for H264 streams as H265 doesn't work with VA
  
 
 
+#### Server statistics into Home Assistant
+Taken from [How to monitor Linux Server stats in Home Assistant](https://blog.fosketts.net/2024/12/30/how-to-monitor-linux-server-stats-in-home-assistant/)
+
+Create a user admin for the service to run under
+
+```
+# useradd admin
+# password admin
+# mkdir /home/admin
+# chown admin:admin /home/admin
+# apt update
+# apt install python3-venv
+# loginctl enable-linger admin
+# su - admin
+$ python3 -m venv ~/linux2mqtt
+$ ~/linux2mqtt/bin/pip install linux2mqtt
+```
+##### Create a systemd service running under the user admin
+```
+$ mkdir -p ~/.config/systemd/user
+$ cat >~/.config/systemd/admin/linux2mqtt.service <!
+[Unit]
+Description=Log system information via MQTT
+DefaultDependencies=no
+
+[Service]
+ExecStart=/home/admin/linux2mqtt/bin/linux2mqtt --name ShedProxmox --cpu=15 --vm --temp --fan --du='/' --du='/home' --du '/var/Storage' --net=enp3s0,15 --net=enp4s0,15 --host=172.24.1.31 --username=mqtt --password=mensshed
+Type=exec
+Restart=always
+
+[Install]
+WantedBy=default.target
+!
+
+$ systemctl --user daemon-reload
+$ systemctl --user enable linux2mqtt.service
+$ systemctl --user start linux2mqtt.service
+$ systemctl --user status linux2mqtt.service
+```
