@@ -9,13 +9,13 @@ dnf -y update
 dnf -y install git
 
 # Install gnome-software
-dnf -y install fedora-workstation-repositories gnome-software
+# dnf -y install fedora-workstation-repositories gnome-software
 
 # Install the Cinnamon desktop
-dnf install @cinnamon-desktop
+dnf -y install @cinnamon-desktop
 
 #enable the 3rd party repositories
-dnf config-manager setopt google-chromae.enabled=1
+dnf config-manager setopt google-chrome.enabled=1
 dnf config-manager setopt copr:copr.fedorainfracloud.org:phracek:PyCharm.enabled=1
 #dnf config-manager setopt rpmfusion-nonfree-nvidia-driver
 #dnf config-manager setopt rpmfusion-nonfree-steam
