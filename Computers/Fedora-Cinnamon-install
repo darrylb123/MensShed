@@ -9,7 +9,7 @@ dnf -y update
 dnf -y install git
 
 # Install gnome-software
-# dnf -y install fedora-workstation-repositories gnome-software
+dnf -y install fedora-workstation-repositories gnome-software
 
 # Install the Cinnamon desktop
 dnf -y install @cinnamon-desktop
@@ -30,7 +30,7 @@ dnf -y install google-chrome-stable gimp inkscape
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Install FreeCAD 
-flatpak install flathub org.freecadweb.FreeCAD -y --noninteractive
+flatpak install flathub app/org.freecad.FreeCAD/x86_64/stable -y --noninteractive
 
 #Install Bambu Studio
 flatpak install flathub com.bambulab.BambuStudio -y --noninteractive
